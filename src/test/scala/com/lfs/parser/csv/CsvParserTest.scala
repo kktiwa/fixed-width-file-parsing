@@ -1,7 +1,7 @@
 package com.lfs.parser.csv
 
-import org.scalatest.flatspec.AnyFlatSpec
 import com.lfs.parser.config.Column
+import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers.convertToAnyShouldWrapper
 
 class CsvParserTest extends AnyFlatSpec {

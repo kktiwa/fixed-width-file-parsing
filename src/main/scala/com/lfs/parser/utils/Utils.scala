@@ -1,8 +1,7 @@
 package com.lfs.parser.utils
 
-import java.nio.file.Files
 import java.nio.charset.Charset
-import java.nio.file.Paths
+import java.nio.file.{Files, Paths}
 import scala.collection.JavaConverters._
 
 object Utils {

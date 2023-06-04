@@ -3,6 +3,7 @@ package com.lfs.parser.config
 import org.scalatest.EitherValues
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers._
+
 import java.nio.charset.Charset
 
 
