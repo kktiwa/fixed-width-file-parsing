@@ -10,8 +10,8 @@ import java.nio.charset.Charset
 class FileSpecConfigLoaderTest extends AnyFlatSpec with EitherValues {
 
   "FileSpecConfigLoader" should "parse a valid file spec correctly" in {
+    val filePath = "test-data"
     val fileName = "test-spec.json"
-    val filePath = "/Users/kunaltiwary/projects/fixed-width-file-parsing/src/test/resources"
     val result = FileSpecConfigLoader.load(path = filePath, fileName = fileName)
     val expected = FileSpecConfig(
       columns = List(
@@ -27,8 +27,8 @@ class FileSpecConfigLoaderTest extends AnyFlatSpec with EitherValues {
   }
 
   it should "fail parsing for an invalid file spec" in {
+    val filePath = "test-data"
     val fileName = "invalid-spec.json"
-    val filePath = "/Users/kunaltiwary/projects/fixed-width-file-parsing/src/test/resources"
     val result = FileSpecConfigLoader.load(path = filePath, fileName = fileName)
     result.left.value.toString shouldBe "DecodingFailure at .ColumnNames: Missing required field"
   }

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Main-Class: com.lfs.parser.Main
+Specification-Title: fixed-width-file-parsing
+Specification-Version: 0.1.0-SNAPSHOT
+Specification-Vendor: fixed-width-file-parsing
+Implementation-Title: fixed-width-file-parsing
+Implementation-Version: 0.1.0-SNAPSHOT
+Implementation-Vendor: fixed-width-file-parsing
+Implementation-Vendor-Id: fixed-width-file-parsing
+

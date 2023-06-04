@@ -7,10 +7,10 @@ import com.lfs.parser.utils.Utils.{readFileAsList, writeFile}
 
 object Main extends App {
 
-  private val targetFilePath = "/Users/kunaltiwary/projects/fixed-width-file-parsing/src/main/resources"
+  private val targetFilePath = "data"
   private val specFileName = "spec.json"
-  private val fixedWidthFileName = "fixed-width.txt"
-  private val csvOutputFileName = "output.csv"
+  private val fixedWidthFileName = "fixed-width1.txt"
+  private val csvOutputFileName = "output1.csv"
 
   //Read the `spec.json` file and parse as config
   FileSpecConfigLoader.load(targetFilePath, specFileName) match {

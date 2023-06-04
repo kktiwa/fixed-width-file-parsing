@@ -1,11 +1,12 @@
+ThisBuild / name := "Fixed Width File Parser"
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
 ThisBuild / scalaVersion := "2.12.12"
 ThisBuild / scalaBinaryVersion := "2.12"
 
-lazy val root = (project in file("."))
+lazy val root = (project in file("fixed-width-file-parsing"))
   .settings(
-    name := "fixed-width-file-parsing",
+    name := "fixed-width-file-parsing"
   )
 
 lazy val circeVersion = "0.14.5"
@@ -34,3 +35,17 @@ scalacOptions ++= Seq(
 Compile / console / scalacOptions --= Seq("-Ywarn-unused", "-Ywarn-unused-import")
 Compile / scalacOptions --= Seq("-Xfatal-warnings", "-Ywarn-unused-import")
 
+enablePlugins(DockerPlugin)
+
+
+docker / dockerfile := {
+  // The assembly task generates a fat JAR file
+  val artifact: File = assembly.value
+  val artifactTargetPath = s"/app/${artifact.name}"
+
+  new Dockerfile {
+    from("openjdk:8-jre")
+    add(artifact, artifactTargetPath)
+    entryPoint("java", "-jar", artifactTargetPath)
+  }
+}

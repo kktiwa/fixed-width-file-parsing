@@ -1,0 +1,10 @@
+[0m[[0m[0minfo[0m] [0m[0m:: delivering :: fixed-width-file-parsing#fixed-width-file-parsing_2.12;0.1.0-SNAPSHOT :: 0.1.0-SNAPSHOT :: integration :: Sun Jun 04 20:55:34 AEST 2023[0m
+[0m[[0m[0mdebug[0m] [0m[0m	options = status=integration pubdate=Sun Jun 04 20:55:34 AEST 2023 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
+[0m[[0m[0minfo[0m] [0m[0m	delivering ivy file to /Users/kunaltiwary/projects/fixed-width-file-parsing/fixed-width-file-parsing/target/scala-2.12/ivy-0.1.0-SNAPSHOT.xml[0m
+[0m[[0m[0mdebug[0m] [0m[0m	deliver done (12ms)[0m
+[0m[[0m[0mdebug[0m] [0m[0mlocal do not support transaction. ivy pattern does not use revision as a directory[0m
+[0m[[0m[0minfo[0m] [0m[0m	published fixed-width-file-parsing_2.12 to /Users/kunaltiwary/.ivy2/local/fixed-width-file-parsing/fixed-width-file-parsing_2.12/0.1.0-SNAPSHOT/poms/fixed-width-file-parsing_2.12.pom[0m
+[0m[[0m[0minfo[0m] [0m[0m	published fixed-width-file-parsing_2.12 to /Users/kunaltiwary/.ivy2/local/fixed-width-file-parsing/fixed-width-file-parsing_2.12/0.1.0-SNAPSHOT/jars/fixed-width-file-parsing_2.12.jar[0m
+[0m[[0m[0minfo[0m] [0m[0m	published fixed-width-file-parsing_2.12 to /Users/kunaltiwary/.ivy2/local/fixed-width-file-parsing/fixed-width-file-parsing_2.12/0.1.0-SNAPSHOT/srcs/fixed-width-file-parsing_2.12-sources.jar[0m
+[0m[[0m[0minfo[0m] [0m[0m	published fixed-width-file-parsing_2.12 to /Users/kunaltiwary/.ivy2/local/fixed-width-file-parsing/fixed-width-file-parsing_2.12/0.1.0-SNAPSHOT/docs/fixed-width-file-parsing_2.12-javadoc.jar[0m
+[0m[[0m[0minfo[0m] [0m[0m	published ivy to /Users/kunaltiwary/.ivy2/local/fixed-width-file-parsing/fixed-width-file-parsing_2.12/0.1.0-SNAPSHOT/ivys/ivy.xml[0m
