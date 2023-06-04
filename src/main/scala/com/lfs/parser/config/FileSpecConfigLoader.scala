@@ -2,7 +2,9 @@ package com.lfs.parser.config
 
 import com.lfs.parser.utils.Utils.readFile
 import io.circe
-
+import io.circe.Decoder
+import io.circe.generic.semiauto.deriveDecoder
+import io.circe.parser._
 import java.nio.charset.Charset
 
 
@@ -23,7 +25,7 @@ case class FileSpecConfig(columns: List[Column],
                          )
 
 /**
- * Represents a column name and it's fixed offset
+ * Represents a column name and it's fixed offset/width
  *
  * @param name
  * @param width
@@ -50,10 +52,6 @@ case class FileSpecJSON(
                        )
 
 object FileSpecConfigLoader {
-
-  import io.circe.Decoder
-  import io.circe.generic.semiauto.deriveDecoder
-  import io.circe.parser._
 
   implicit val fileSpecJSON: Decoder[FileSpecJSON] = deriveDecoder[FileSpecJSON]
 

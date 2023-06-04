@@ -13,7 +13,7 @@ class CsvParserTest extends AnyFlatSpec {
       "X XX XXX ",
       "X XX XXX "
     )
-    val csvLines = CsvParser.parse(columns, lines)
+    val csvLines = CsvParser.parse(lines, columns)
     csvLines(0) shouldBe "a,b,c"
     csvLines(1) shouldBe "X,XX,XXX"
     csvLines(2) shouldBe "X,XX,XXX"

@@ -24,7 +24,7 @@ object Main extends App {
       //Read back the fixed-width file
       val fixedWidthContents = readFileAsList(targetFilePath, fixedWidthFileName, specConfig.inputEncoding)
       //Parse `fixedWidthContents` using the spec config
-      val csvContents = CsvParser.parse(specConfig.columns, fixedWidthContents)
+      val csvContents = CsvParser.parse(fixedWidthContents, specConfig.columns)
       //Write to an output CSV file
       writeFile(targetFilePath, csvOutputFileName, csvContents, specConfig.outputEncoding)
   }
