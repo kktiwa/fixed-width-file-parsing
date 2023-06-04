@@ -1,7 +1,7 @@
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
-ThisBuild / scalaVersion := "2.13.11"
-ThisBuild / scalaBinaryVersion := "2.13"
+ThisBuild / scalaVersion := "2.12.12"
+ThisBuild / scalaBinaryVersion := "2.12"
 
 lazy val root = (project in file("."))
   .settings(
@@ -18,3 +18,19 @@ libraryDependencies ++= Seq(
 ).map(_ % circeVersion) ++ Seq(
   "org.scalatest" %% "scalatest" % scalaTestVersion % Test
 )
+
+scalacOptions ++= Seq(
+  "-unchecked",
+  "-deprecation",
+  "-feature",
+  "-Xfatal-warnings",
+  "-Xlint:_",
+  "-Ywarn-dead-code",
+  "-Ywarn-unused-import",
+  "-Ywarn-unused",
+  "-Ywarn-value-discard"
+)
+
+Compile / console / scalacOptions --= Seq("-Ywarn-unused", "-Ywarn-unused-import")
+Compile / scalacOptions --= Seq("-Xfatal-warnings", "-Ywarn-unused-import")
+
