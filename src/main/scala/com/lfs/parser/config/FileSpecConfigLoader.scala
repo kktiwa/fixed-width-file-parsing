@@ -1,5 +1,7 @@
 package com.lfs.parser.config
 
+import com.lfs.parser.utils.Utils.readFile
+import io.circe
 import java.nio.charset.Charset
 
 
@@ -31,6 +33,7 @@ case class Column(name: String,
 
 /**
  * Represents the data structure after parsing the JSON file `spec.json`
+ *
  * @param ColumnNames
  * @param Offsets
  * @param FixedWidthEncoding
@@ -53,21 +56,15 @@ object FileSpecConfigLoader {
 
   implicit val fileSpecJSON: Decoder[FileSpecJSON] = deriveDecoder[FileSpecJSON]
 
-  def load(path: String, fileName: String) = {
-    val jsonAsString = readJSONSpecFile(path, fileName)
+  def load(path: String, fileName: String): Either[circe.Error, FileSpecConfig] = {
+    val jsonAsString = readFile(path, fileName)
     for {
       json <- parse(jsonAsString)
       fileSpecJSON <- json.as[FileSpecJSON]
     } yield buildFileSpecConfig(fileSpecJSON)
   }
 
-  def readJSONSpecFile(path: String, fileName: String): String = {
-    val source = scala.io.Source.fromFile(s"$path/$fileName")
-    val jsonAsString = try source.mkString finally source.close()
-    jsonAsString
-  }
-
-  def buildFileSpecConfig(fileSpecJSON: FileSpecJSON): FileSpecConfig = {
+  private def buildFileSpecConfig(fileSpecJSON: FileSpecJSON): FileSpecConfig = {
     val columns = fileSpecJSON.ColumnNames.zip(fileSpecJSON.Offsets).map {
       case (name, width) => Column(name, width.toInt)
     }

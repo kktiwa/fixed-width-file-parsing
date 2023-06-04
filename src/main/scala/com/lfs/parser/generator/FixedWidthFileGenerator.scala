@@ -4,7 +4,7 @@ import com.lfs.parser.config.Column
 
 object FixedWidthFileGenerator {
 
-  def generate(columns: List[Column], numberOfLines: Int): List[String] =
+  def generate(columns: List[Column], numberOfLines: Int = 10): List[String] =
     generateColumnHeading(columns) +:
       (1 to numberOfLines)
         .toList
