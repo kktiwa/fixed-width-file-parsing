@@ -45,6 +45,6 @@ sbt coverageReport
 ```
 
 ### Improvements
-- Error handling
-- Logging
-- Dockerizing the application correctly
+- Error handling during parsing
+- Logging at different levels
+- Integration tests
