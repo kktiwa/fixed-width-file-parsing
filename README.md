@@ -32,6 +32,12 @@ The following files would be created under `/data` folder:
 - `input.txt` is the generated fixed width file
 - `output.csv` is the parsed csv file
 
+### Running within Docker
+Run the following command to build and execute the Docker image:
+```bash
+docker build -t fixed-width-file-parser . && docker run -it fixed-width-file-parser
+```
+
 ### Code Coverage
 
 Run the following command to instrument code and tests:
