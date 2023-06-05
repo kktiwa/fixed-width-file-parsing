@@ -34,18 +34,3 @@ scalacOptions ++= Seq(
 
 Compile / console / scalacOptions --= Seq("-Ywarn-unused", "-Ywarn-unused-import")
 Compile / scalacOptions --= Seq("-Xfatal-warnings", "-Ywarn-unused-import")
-
-enablePlugins(DockerPlugin)
-
-
-docker / dockerfile := {
-  // The assembly task generates a fat JAR file
-  val artifact: File = assembly.value
-  val artifactTargetPath = s"/app/${artifact.name}"
-
-  new Dockerfile {
-    from("openjdk:8-jre")
-    add(artifact, artifactTargetPath)
-    entryPoint("java", "-jar", artifactTargetPath)
-  }
-}
