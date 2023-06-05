@@ -28,9 +28,14 @@ sbt test
 ```
 
 Run the following command to execute the `Main` application:
+```sbt
+sbt run
+```
 The following files would be created under `/data` folder:
-- `input.txt` is the generated fixed width file
+- `fixed-width.txt` is the generated fixed width file
 - `output.csv` is the parsed csv file
+Note: If file contents are same, it may appear as if they are not getting replaced.
+This is not true and can be tested by changing the `spec.json` on each run.
 
 ### Running within Docker
 Run the following command to build and execute the Docker image:
